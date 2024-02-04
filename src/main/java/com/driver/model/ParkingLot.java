@@ -1,4 +1,4 @@
-package com.driver.entities;
+package com.driver.model;
 
 import java.util.ArrayList;
 import java.util.List;

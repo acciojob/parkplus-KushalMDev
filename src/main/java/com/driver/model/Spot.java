@@ -1,4 +1,4 @@
-package com.driver.entities;
+package com.driver.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,8 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-
-import com.driver.model.SpotType;
 
 @Entity
 public class Spot {

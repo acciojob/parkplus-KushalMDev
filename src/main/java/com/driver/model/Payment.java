@@ -1,12 +1,10 @@
-package com.driver.entities;
+package com.driver.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
-
-import com.driver.model.PaymentMode;
 
 @Entity
 public class Payment {

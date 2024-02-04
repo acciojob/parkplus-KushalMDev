@@ -6,12 +6,12 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.driver.entities.ParkingLot;
-import com.driver.entities.Payment;
-import com.driver.entities.Reservation;
-import com.driver.entities.Spot;
-import com.driver.entities.User;
+import com.driver.model.ParkingLot;
+import com.driver.model.Payment;
+import com.driver.model.Reservation;
+import com.driver.model.Spot;
 import com.driver.model.SpotType;
+import com.driver.model.User;
 import com.driver.repository.ParkingLotRepository;
 import com.driver.repository.ReservationRepository;
 import com.driver.repository.SpotRepository;

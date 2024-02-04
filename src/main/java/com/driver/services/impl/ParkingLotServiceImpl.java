@@ -3,8 +3,8 @@ package com.driver.services.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.driver.entities.ParkingLot;
-import com.driver.entities.Spot;
+import com.driver.model.ParkingLot;
+import com.driver.model.Spot;
 import com.driver.model.SpotType;
 import com.driver.repository.ParkingLotRepository;
 import com.driver.repository.SpotRepository;

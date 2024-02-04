@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.driver.entities.ParkingLot;
-import com.driver.entities.Spot;
+import com.driver.model.ParkingLot;
+import com.driver.model.Spot;
 import com.driver.services.impl.ParkingLotServiceImpl;
 
 @RestController

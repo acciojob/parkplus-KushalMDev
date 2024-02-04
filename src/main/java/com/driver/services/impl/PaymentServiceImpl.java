@@ -3,10 +3,10 @@ package com.driver.services.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.driver.entities.Payment;
-import com.driver.entities.Reservation;
-import com.driver.entities.Spot;
+import com.driver.model.Payment;
 import com.driver.model.PaymentMode;
+import com.driver.model.Reservation;
+import com.driver.model.Spot;
 import com.driver.repository.PaymentRepository;
 import com.driver.repository.ReservationRepository;
 import com.driver.services.PaymentService;

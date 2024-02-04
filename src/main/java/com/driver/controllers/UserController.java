@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.driver.entities.User;
+import com.driver.model.User;
 import com.driver.services.impl.UserServiceImpl;
 
 @RestController
