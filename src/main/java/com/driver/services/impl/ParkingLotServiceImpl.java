@@ -1,5 +1,7 @@
 package com.driver.services.impl;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -57,8 +59,11 @@ public class ParkingLotServiceImpl implements ParkingLotService {
 
     @Override
     public Spot updateSpot(int parkingLotId, int spotId, int pricePerHour) {
-        Spot spot=spotRepository1.findById(spotId).get();
-        ParkingLot parkingLot=parkingLotRepository1.findById(parkingLotId).get();
+        Optional<Spot> optional=spotRepository1.findById(spotId);
+        Optional<ParkingLot> optional2=parkingLotRepository1.findById(parkingLotId);
+        if(optional.isEmpty() || optional2.isEmpty())return null;
+        Spot spot=optional.get();
+        ParkingLot parkingLot=optional2.get();
         spot.setParkingLot(parkingLot);
         spot.setPricePerHour(pricePerHour);
         spotRepository1.save(spot);
