@@ -33,7 +33,7 @@ public class ReservationServiceImpl implements ReservationService {
 
         Optional<User> puser=userRepository3.findById(userId);
         Optional<ParkingLot> pOptional=parkingLotRepository3.findById(parkingLotId);
-        if(puser.isEmpty() || pOptional.isEmpty())return null;
+        if(puser.isEmpty() || pOptional.isEmpty())throw new Exception("Cannot make reservation");
         User user=puser.get();
         ParkingLot parkingLot=pOptional.get();
         List<Spot> spots=parkingLot.getSpotList();
@@ -75,14 +75,17 @@ public class ReservationServiceImpl implements ReservationService {
                }
             }
         }
-        if(bookSpot.equals(null))return null;
+        if(bookSpot.equals(null))throw new Exception("Cannot make reservation");;
         Reservation reservation=new Reservation();
         reservation.setNumberOfHours(timeInHours);
         reservation.setSpot(bookSpot);
         reservation.setUser(user);
+        user.getReservationList().add(reservation);
         bookSpot.setOccupied(true);
         bookSpot.getReservationList().add(reservation);
         reservationRepository3.save(reservation);
+        userRepository3.save(user);
+        
         return reservation;
 
     }

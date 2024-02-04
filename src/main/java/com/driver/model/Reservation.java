@@ -1,9 +1,11 @@
 package com.driver.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
@@ -23,11 +25,13 @@ public class Reservation {
 
     int numberOfHours;
     @ManyToOne
+    @JoinColumn
     User user;
     @ManyToOne
+    @JoinColumn
     Spot spot;
 
-    @OneToOne
+    @OneToOne(mappedBy = "reservation",cascade = CascadeType.ALL)
     Payment payment;
 
     

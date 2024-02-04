@@ -23,8 +23,7 @@ public class ParkingLotServiceImpl implements ParkingLotService {
         ParkingLot parkingLot=new ParkingLot();
         parkingLot.setName(name);
         parkingLot.setAddress(address);
-        parkingLotRepository1.save(parkingLot);
-        return parkingLot;
+       return parkingLotRepository1.save(parkingLot);
 
     }
 
@@ -59,14 +58,16 @@ public class ParkingLotServiceImpl implements ParkingLotService {
 
     @Override
     public Spot updateSpot(int parkingLotId, int spotId, int pricePerHour) {
-        Optional<Spot> optional=spotRepository1.findById(spotId);
-        Optional<ParkingLot> optional2=parkingLotRepository1.findById(parkingLotId);
-        if(optional.isEmpty() || optional2.isEmpty())return null;
-        Spot spot=optional.get();
-        ParkingLot parkingLot=optional2.get();
-        spot.setParkingLot(parkingLot);
-        spot.setPricePerHour(pricePerHour);
-        spotRepository1.save(spot);
+        Spot spot=null;
+        ParkingLot parkingLot=parkingLotRepository1.findById(parkingLotId).get();
+        for(Spot spot1: parkingLot.getSpotList()) {
+            if(spot1.getId()==spotId) {
+                spot=spot1;
+                spot.setPricePerHour(pricePerHour);
+                spotRepository1.save(spot);
+                break;
+            }
+        }
         return spot;
 
 
