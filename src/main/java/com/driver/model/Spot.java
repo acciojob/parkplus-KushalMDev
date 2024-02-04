@@ -18,6 +18,14 @@ public class Spot {
     @GeneratedValue(strategy = GenerationType.AUTO)
     int id;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     SpotType spotType;
 
     int pricePerHour;

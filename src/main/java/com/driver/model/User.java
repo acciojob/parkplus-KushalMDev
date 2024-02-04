@@ -16,6 +16,14 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     int id;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     String name;
     String phoneNumber;
     String password;
